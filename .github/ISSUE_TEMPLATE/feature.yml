@@ -1,0 +1,17 @@
+name: Feature
+description: Describe a user-visible improvement
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Desired behavior
+      description: Who needs this and what should happen?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include success, empty and error scenarios where relevant.
+    validations:
+      required: true

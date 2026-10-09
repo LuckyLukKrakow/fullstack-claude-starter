@@ -1,0 +1,23 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172033;
+  background: #f4f6fa;
+}
+main {
+  max-width: 640px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+}
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+input,
+button {
+  font: inherit;
+  padding: 0.75rem;
+}
+li {
+  padding: 0.5rem;
+  overflow-wrap: anywhere;
+}

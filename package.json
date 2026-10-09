@@ -1,0 +1,14 @@
+{
+  "name": "fullstack-claude-starter",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "check:frontend": "npm --prefix frontend run check",
+    "build:frontend": "npm --prefix frontend run build",
+    "test:backend": "node scripts/backend.mjs test",
+    "dev:backend": "node scripts/backend.mjs spring-boot:run",
+    "check": "npm run check:frontend && npm run test:backend",
+    "test:hooks": "node --test scripts/hooks.test.mjs",
+    "check:config": "node scripts/check-config.mjs"
+  }
+}

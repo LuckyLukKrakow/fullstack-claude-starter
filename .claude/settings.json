@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(npm run check:frontend)",
+      "Bash(npm run build:frontend)",
+      "Bash(npm run test:backend)",
+      "Bash(npm run test:hooks)"
+    ],
+    "deny": ["Read(.env)", "Read(.env.*)", "Read(**/.env)", "Read(**/.env.*)"]
+  },
+  "hooks": {
+    "SessionStart": [{
+      "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/session-context.mjs\"", "timeout": 10 }]
+    }],
+    "PreToolUse": [{
+      "matcher": "Edit|Write",
+      "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/protect-files.mjs\"", "timeout": 10 }]
+    }],
+    "PostToolUse": [{
+      "matcher": "Edit|Write",
+      "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/format-frontend.mjs\"", "timeout": 30 }]
+    }]
+  }
+}
